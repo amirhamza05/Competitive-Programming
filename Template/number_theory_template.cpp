@@ -23,11 +23,27 @@ struct number_theory
     ll modinv(ll n);
     ll nPr(ll n,ll p);
     ll nCr(ll n,ll p);
+    ll big_mul(ll a,ll b,ll m);
     ll mod_number(ll num,ll mod=MOD);
     void sieve();
     vector<ll>divisors_list(ll n);
 
 };
+
+
+number_theory::number_theory()
+{
+    fac[0]=1;
+    for(int i=1; i<=MAX-5; i++)
+        fac[i]=((fac[i-1]%MOD)*i)%MOD;
+    this->sieve();
+}
+
+
+ll number_theory::big_mul(ll a,ll b,ll m)
+{
+    return ((b)?(big_mul((a<<1)%m,b>>1,m)%m+((b&1)?a:0)):0)%m;
+}
 
 void number_theory::sieve()
 {
@@ -48,13 +64,6 @@ void number_theory::sieve()
     }
 }
 
-number_theory::number_theory()
-{
-    fac[0]=1;
-    for(int i=1; i<=MAX-5; i++)
-        fac[i]=((fac[i-1]%MOD)*i)%MOD;
-    this->sieve();
-}
 
 
 vector<ll>number_theory::divisors_list(ll n)
@@ -114,16 +123,7 @@ int main()
     //cin.tie(0);
 
     number_theory ntheory;
-    ll n=2,t,i,m,k=454,res;
-    res=ntheory.bigmod(n,k);
-    vector<ll>v=ntheory.divisors_list(24);
-    cin >> t;
-    for(i=0; i<t; i++)
-    {
-        cin >> n >> m >> k;
-        res=(n<k)?0:((ntheory.bigmod(m,k)%MOD)*(ntheory.nCr(n,k))%MOD)%MOD;
-        cout << res << "\n";
-    }
+
 
     return 0;
 }
