@@ -3,12 +3,13 @@
 ### KGSS - Maximum Sum
 - **Link:** https://www.spoj.com/problems/KGSS/
 - **Algorithm:** Segment tree, Pair Segment Tree
+- <details><summary>Idea</summary>
+   Firstly store all value
+</details>
 
-> Firstly store all value
-<details>
-  <summary>Code</summary>
-  
-  ```c++
+- <details><summary>Code</summary>
+ 
+ ```c++
 #include<bits/stdc++.h>
 #define MAX 100007
 using namespace std;
@@ -76,6 +77,15 @@ int main() {
 }
 
 ```
+</details>
+
+
+- example 4
+
+> Firstly store all value
+<details>
+  <summary>Code</summary>
+
 </details> 
 
 
