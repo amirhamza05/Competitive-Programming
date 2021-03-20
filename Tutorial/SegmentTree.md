@@ -6,7 +6,6 @@
 - <details><summary>Idea</summary>
    Firstly store all value
 </details>
-
 - <details><summary>Code</summary>
  
  ```c++
@@ -78,14 +77,5 @@ int main() {
 
 ```
 </details>
-
-
-- example 4
-
-> Firstly store all value
-<details>
-  <summary>Code</summary>
-
-</details> 
 
 
